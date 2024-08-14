@@ -1,4 +1,4 @@
-pipline{
+pipeline{
     agent any
     environment{
         MAVEN_ARGS = " -e clean install"
