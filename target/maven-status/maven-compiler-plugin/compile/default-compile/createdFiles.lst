@@ -1,0 +1,11 @@
+com/bootlabs/springbootdocker/repositories/AuthorRepository.class
+com/bootlabs/springbootdocker/service/AuthorService.class
+com/bootlabs/springbootdocker/service/BookService.class
+com/bootlabs/springbootdocker/SpringBootDockerApplication.class
+com/bootlabs/springbootdocker/service/BookServiceImpl.class
+com/bootlabs/springbootdocker/repositories/BookRepository.class
+com/bootlabs/springbootdocker/controller/BookController.class
+com/bootlabs/springbootdocker/controller/AuthorController.class
+com/bootlabs/springbootdocker/service/AuthorServiceImpl.class
+com/bootlabs/springbootdocker/entities/Book.class
+com/bootlabs/springbootdocker/entities/Author.class
