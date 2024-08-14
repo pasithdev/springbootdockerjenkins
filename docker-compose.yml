@@ -15,7 +15,7 @@ services:
     volumes:
       - ./postgresdb:/var/lib/postgresql/data
     ports:
-      - "6433:5433"
+      - "7432:5432"
     networks:
       - spring_network_jenkins
   api:
