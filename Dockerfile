@@ -4,6 +4,7 @@ FROM maven:3.8.4-openjdk-17-slim
 # Add Maintainer Info
 WORKDIR /app
 COPY . .
+
 # Add a volume pointing to /tmp
 ARG JAR_FILE=target/spring-boot-docker*.jar
 # Add the application's jar to the container
