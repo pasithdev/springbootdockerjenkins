@@ -5,7 +5,7 @@ networks:
 
 services:
   db:
-    image: postgres:15.2
+    image: postgres:15
     container_name: bookdb
     restart: always
     environment:
@@ -13,9 +13,9 @@ services:
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: bookdb
     volumes:
-      - ./postgresdb:/var/lib/postgresql/data
+      - ./pgdb:/var/lib/postgresql/data
     ports:
-      - "7432:5432"
+      - "8432:5432"
     networks:
       - spring_network_jenkins
   api:
