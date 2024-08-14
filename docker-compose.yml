@@ -1,6 +1,6 @@
 networks:
   spring_network:
-    name: spring_network
+    name: spring_network_jenkins
     driver: bridge
 
 services:
@@ -17,7 +17,7 @@ services:
     ports:
       - "6433:5433"
     networks:
-      - spring_network
+      - spring_network_jenkins
   api:
     build: .
     container_name: bookapi
@@ -31,7 +31,7 @@ services:
     depends_on:
       - db
     networks:
-      - spring_network
+      - spring_network_jenkins
 volumes:
   postgresdb:
     driver: local
