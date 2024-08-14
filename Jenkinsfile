@@ -23,7 +23,7 @@ pipeline{
         }
         stage('docker-compose start'){
             steps{
-                echo 'docker compose up -d --build'
+                sh 'docker-compose up -d --build'
             }
         }
     }
