@@ -1,0 +1,41 @@
+networks:
+  spring_production_network_jenkins:
+    name: spring_staging_network_jenkins
+    driver: bridge
+
+services:
+  productiondb:
+    image: postgres:15
+    container_name: bookdb_production
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: bookdb
+    volumes:
+      - ./productiondb:/var/lib/postgresql/data
+    ports:
+      - "9432:5432"
+    networks:
+      - spring_production_network_jenkins
+  stagingapi:
+    image: "bookapi_api_production"
+    build:
+      context: .
+      dockerfile: Dockerfile-production
+    container_name: bookapi_production
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL: jdbc:postgresql://production:5432/bookdb
+      - SPRING_DATASOURCE_USERNAME: postgres
+      - SPRING_DATASOURCE_PASSWORD: 1234
+      - SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+    ports:
+      - "9090:9090"
+    depends_on:
+      - productiondb
+    networks:
+      - spring_production_network_jenkins
+volumes:
+  productiondb:
+    driver: local
