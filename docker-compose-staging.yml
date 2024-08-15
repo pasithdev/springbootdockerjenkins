@@ -26,10 +26,10 @@ services:
     container_name: bookapi_staging
     restart: always
     environment:
-      - SPRING_DATASOURCE_URL: jdbc:postgresql://stagingdb:5432/bookdb
-      - SPRING_DATASOURCE_USERNAME: postgres
-      - SPRING_DATASOURCE_PASSWORD: 1234
-      - SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://stagingdb:5432/bookdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 1234
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
     ports:
       - "8090:8090"
     depends_on:

@@ -26,10 +26,10 @@ services:
     container_name: bookapi_production
     restart: always
     environment:
-      - SPRING_DATASOURCE_URL: jdbc:postgresql://productiondb:5432/bookdb
-      - SPRING_DATASOURCE_USERNAME: postgres
-      - SPRING_DATASOURCE_PASSWORD: 1234
-      - SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://productiondb:5432/bookdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 1234
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
     ports:
       - "9090:9090"
     depends_on:
