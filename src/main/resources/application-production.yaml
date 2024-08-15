@@ -3,6 +3,6 @@ server:
 spring:
   config:
     activate:
-      on-profile: staging
+      on-profile: production
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://productiondb:5432/bookdb}

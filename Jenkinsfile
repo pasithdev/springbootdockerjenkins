@@ -38,7 +38,7 @@ pipeline{
         stage('docker-compose start'){
             steps{
                 sh  """
-                SPRING_PROFILES_ACTIVE = ${SPRING_PROFILES_ACTIVE} docker-compose -f docker-compose-${params.ENV}.yml up -d --build
+                SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE} docker-compose -f docker-compose-${params.ENV}.yml up -d --build
                 """
             }
         }

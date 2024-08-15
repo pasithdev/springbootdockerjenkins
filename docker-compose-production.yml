@@ -1,6 +1,6 @@
 networks:
   spring_production_network_jenkins:
-    name: spring_staging_network_jenkins
+    name: spring_production_network_jenkins
     driver: bridge
 
 services:
@@ -18,7 +18,7 @@ services:
       - "9432:5432"
     networks:
       - spring_production_network_jenkins
-  stagingapi:
+  productionapi:
     image: "bookapi_api_production"
     build:
       context: .
@@ -26,7 +26,7 @@ services:
     container_name: bookapi_production
     restart: always
     environment:
-      - SPRING_DATASOURCE_URL: jdbc:postgresql://production:5432/bookdb
+      - SPRING_DATASOURCE_URL: jdbc:postgresql://productiondb:5432/bookdb
       - SPRING_DATASOURCE_USERNAME: postgres
       - SPRING_DATASOURCE_PASSWORD: 1234
       - SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
